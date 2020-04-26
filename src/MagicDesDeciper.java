@@ -3,7 +3,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class MagicDES {
+public class MagicDesDeciper {
 
     private  static int[] shiftCount = {1,1,2,2,2,2,2,2,1,2,2,2,2,2,2,1};
 
@@ -11,16 +11,16 @@ public class MagicDES {
 
         int bajt;
         String word = null;
-        //boolean[] key = {false,false,true,true,false,false,false,true,true,false,false,false,true,false,false,false,true,false,false,false,false,true,true,false,false,true,false,true,false,false,false,false,false,true,false,false,false,true,false,false,true,false,false,false,false,false,false,true,false,true,false,false,false,true,false,true,false,false,false,false,true,false,false,false};
+      //  boolean[] key = {false,false,true,true,false,false,false,true,true,false,false,false,true,false,false,false,true,false,false,false,false,true,true,false,false,true,false,true,false,false,false,false,false,true,false,false,false,true,false,false,true,false,false,false,false,false,false,true,false,true,false,false,false,true,false,true,false,false,false,false,true,false,false,false};
         boolean[] key = {false,false,true,true,false,false,false,true};
-        FileInputStream file = new FileInputStream("src/pliki/test3.bin");
+        FileInputStream file = new FileInputStream("src/pliki/essa.bin");
         byte[] all = file.readAllBytes();
         file.close();
 
         ArrayList<Boolean> inputData = new ArrayList<Boolean>();
         int counter = 0;
-        FileOutputStream data = new FileOutputStream("src/pliki/data.txt");
-        FileOutputStream outputBinary = new FileOutputStream("src/pliki/essa.bin");
+        FileOutputStream data = new FileOutputStream("src/pliki/data1.txt");
+        FileOutputStream outputBinary = new FileOutputStream("src/pliki/decoded.bin");
         for(byte B : all){
 
             boolean[] baj = intToBinaryArray(B,8);
@@ -41,8 +41,8 @@ public class MagicDES {
                     tab[i]=inputData.get(i);
                 }
 
-                    PlainText plainText = new PlainText(tab);
-                    SecretKey secretKey = new SecretKey(key);
+                PlainText plainText = new PlainText(tab,1);
+                SecretKey secretKey = new SecretKey(key);
 //                    boolean[] tabs = secretKey.leftPartTable;
 //                    for(int i =0; i<tabs.length; i++){
 //                        System.out.println(tabs[i]);
@@ -50,20 +50,23 @@ public class MagicDES {
 //                boolean[] xd = {true,false,true,false,true,false};
 //                Feistel feistel = new Feistel();
 //                feistel.calculateResult(feistel.S1,xd );
-                boolean[] tmp ;
-                for(int i =0; i<16;  i++){
-                    tmp=plainText.rightPartTable;
-                    secretKey.shiftTableRight(shiftCount[i]);
-                    Feistel feistel = new Feistel(plainText.rightPartTable,secretKey.getpc2permutatedTable());
-                    plainText.rightPartTable = feistel.calculate();
-                    for(int x =0; x<plainText.rightPartTable.length; x++){
-                        plainText.leftPartTable[x] = plainText.leftPartTable[x]^plainText.rightPartTable[x];
+               // plainText.changeTablesSide();
+                boolean[] tmp;
+                for(int i =15; i>=0;  i--){
+                    tmp=plainText.leftPartTable;
+
+                    Feistel feistel = new Feistel(plainText.leftPartTable,secretKey.getpc2permutatedTable());
+                    plainText.leftPartTable = feistel.calculate();
+                    for(int x =0; x<plainText.leftPartTable.length; x++){
+                        plainText.rightPartTable[x] = plainText.leftPartTable[x]^plainText.rightPartTable[x];
                     }
-                    plainText.rightPartTable=tmp;
+                    plainText.leftPartTable=tmp;
                     plainText.changeTablesSide();
+                    secretKey.shiftTabLeft(shiftCount[i]);
+
                 }
-                plainText.changeTablesSide();
-                boolean[] result = plainText.endPerm(PlainText.endPermutation);
+               // plainText.changeTablesSide();
+                boolean[] result = plainText.endPerm(PlainText.permutation);
 
 
                 for(int BYTE = 0; BYTE < (result.length / 8); BYTE++){

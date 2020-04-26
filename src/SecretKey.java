@@ -1,6 +1,6 @@
 public class SecretKey {
 
-    private boolean[] secretKey;
+    public boolean[] secretKey;
     public boolean[] leftPartTable;
     public boolean[] rightPartTable;
 
@@ -41,20 +41,44 @@ public class SecretKey {
            return tab;
     }
 
-    private void shiftTabLeft(boolean[] tab, int count){
+    public void shiftTabLeft(int count){
         for(int shitfCount = 0; shitfCount<count; shitfCount++) {
-            tab[0] = tab[tab.length - 1];
-            for (int i = tab.length - 1; i > 0; i--) {
-                    tab[i] = tab[i - 1];
+            this.rightPartTable[0] = this.rightPartTable[this.rightPartTable.length - 1];
+            this.leftPartTable[0] = this.leftPartTable[this.leftPartTable.length - 1];
+            for (int i = this.rightPartTable.length - 1; i > 0; i--) {
+                this.rightPartTable[i] = this.rightPartTable[i - 1];
+                this.leftPartTable[i] = this.leftPartTable[i-1];
+            }
+        }
+    }
+    public void shiftTableRight(int count){
+        for(int shitfCount = 0; shitfCount<count; shitfCount++) {
+            this.rightPartTable[rightPartTable.length-1] = rightPartTable[0];
+            leftPartTable[leftPartTable.length-1] = leftPartTable[0];
+            for (int i = 0; i < leftPartTable.length-1; i++) {
+                rightPartTable[i] = rightPartTable[i + 1];
+                leftPartTable[i] = leftPartTable[i+1];
             }
         }
     }
 
-    public boolean[] getpc2permutatedTable (boolean[] table){
+    public boolean[] getpc2permutatedTable (){
+//        for (int i =0; i<rightPartTable.length; i++){
+//            System.out.print(rightPartTable[i]);
+//
+//        }
+//        System.out.println(rightPartTable.length);
+//        System.out.println();
+        boolean[] table = new boolean[this.leftPartTable.length+this.rightPartTable.length];
+        for (int i = 0; i <this.leftPartTable.length; i++){
+            table[i] = leftPartTable[i];
+            table[i+rightPartTable.length]=rightPartTable[i];
+        }
         boolean[] tab = new boolean[pc2permutation.length];
         for (int i = 0; i< tab.length; i++){
-            tab[i] = table[pc2permutation[i]];
+            tab[i] = table[pc2permutation[i]-1];
         }
+
         return tab;
     }
 
