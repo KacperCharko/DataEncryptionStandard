@@ -50,11 +50,11 @@ public class MagicDES {
 //                boolean[] xd = {true,false,true,false,true,false};
 //                Feistel feistel = new Feistel();
 //                feistel.calculateResult(feistel.S1,xd );
+                boolean[][]keyTabs = secretKey.getKeyTables();
                 boolean[] tmp ;
                 for(int i =0; i<16;  i++){
                     tmp=plainText.rightPartTable;
-                    secretKey.shiftTableRight(shiftCount[i]);
-                    Feistel feistel = new Feistel(plainText.rightPartTable,secretKey.getpc2permutatedTable());
+                    Feistel feistel = new Feistel(plainText.rightPartTable,keyTabs[i]);
                     plainText.rightPartTable = feistel.calculate();
                     for(int x =0; x<plainText.rightPartTable.length; x++){
                         plainText.leftPartTable[x] = plainText.leftPartTable[x]^plainText.rightPartTable[x];

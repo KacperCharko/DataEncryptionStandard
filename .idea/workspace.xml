@@ -57,7 +57,7 @@
       <recent name="C:\Users\kacpe\Documents\GitHub\DataEncryptionStandard\src" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.MagicDES">
+  <component name="RunManager" selected="Application.MagicDesDeciper">
     <configuration name="MagicDES" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="MagicDES" />
       <module name="DataEncryptionStandard" />
@@ -74,8 +74,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.MagicDES" />
         <item itemvalue="Application.MagicDesDeciper" />
+        <item itemvalue="Application.MagicDES" />
       </list>
     </recent_temporary>
   </component>
@@ -91,6 +91,8 @@
       <updated>1587332217953</updated>
       <workItem from="1587332222401" duration="45880000" />
       <workItem from="1587675287575" duration="35000" />
+      <workItem from="1587912960782" duration="2064000" />
+      <workItem from="1587933062545" duration="4466000" />
     </task>
     <servers />
   </component>
@@ -106,22 +108,22 @@
       <screen x="0" y="0" width="1280" height="720" />
     </state>
     <state x="0" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1280.720@0.0.1280.720" timestamp="1587512687093" />
-    <state width="1237" height="159" key="GridCell.Tab.0.bottom" timestamp="1587670822282">
+    <state width="1237" height="159" key="GridCell.Tab.0.bottom" timestamp="1587946991604">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
-    <state width="1237" height="159" key="GridCell.Tab.0.bottom/0.0.1280.720@0.0.1280.720" timestamp="1587670822282" />
-    <state width="1237" height="159" key="GridCell.Tab.0.center" timestamp="1587670822282">
+    <state width="1237" height="159" key="GridCell.Tab.0.bottom/0.0.1280.720@0.0.1280.720" timestamp="1587946991604" />
+    <state width="1237" height="159" key="GridCell.Tab.0.center" timestamp="1587946991604">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
-    <state width="1237" height="159" key="GridCell.Tab.0.center/0.0.1280.720@0.0.1280.720" timestamp="1587670822282" />
-    <state width="1237" height="159" key="GridCell.Tab.0.left" timestamp="1587670822282">
+    <state width="1237" height="159" key="GridCell.Tab.0.center/0.0.1280.720@0.0.1280.720" timestamp="1587946991604" />
+    <state width="1237" height="159" key="GridCell.Tab.0.left" timestamp="1587946991604">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
-    <state width="1237" height="159" key="GridCell.Tab.0.left/0.0.1280.720@0.0.1280.720" timestamp="1587670822282" />
-    <state width="1237" height="159" key="GridCell.Tab.0.right" timestamp="1587670822282">
+    <state width="1237" height="159" key="GridCell.Tab.0.left/0.0.1280.720@0.0.1280.720" timestamp="1587946991604" />
+    <state width="1237" height="159" key="GridCell.Tab.0.right" timestamp="1587946991604">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
-    <state width="1237" height="159" key="GridCell.Tab.0.right/0.0.1280.720@0.0.1280.720" timestamp="1587670822282" />
+    <state width="1237" height="159" key="GridCell.Tab.0.right/0.0.1280.720@0.0.1280.720" timestamp="1587946991604" />
     <state x="337" y="185" key="com.intellij.ide.util.TipDialog" timestamp="1587675310378">
       <screen x="0" y="0" width="1280" height="720" />
     </state>

@@ -11,7 +11,7 @@ public class MagicDesDeciper {
 
         int bajt;
         String word = null;
-      //  boolean[] key = {false,false,true,true,false,false,false,true,true,false,false,false,true,false,false,false,true,false,false,false,false,true,true,false,false,true,false,true,false,false,false,false,false,true,false,false,false,true,false,false,true,false,false,false,false,false,false,true,false,true,false,false,false,true,false,true,false,false,false,false,true,false,false,false};
+        //boolean[] key = {false,false,true,true,false,false,false,true,true,false,false,false,true,false,false,false,true,false,false,false,false,true,true,false,false,true,false,true,false,false,false,false,false,true,false,false,false,true,false,false,true,false,false,false,false,false,false,true,false,true,false,false,false,true,false,true,false,false,false,false,true,false,false,false};
         boolean[] key = {false,false,true,true,false,false,false,true};
         FileInputStream file = new FileInputStream("src/pliki/essa.bin");
         byte[] all = file.readAllBytes();
@@ -41,32 +41,23 @@ public class MagicDesDeciper {
                     tab[i]=inputData.get(i);
                 }
 
-                PlainText plainText = new PlainText(tab,1);
+                PlainText plainText = new PlainText(tab);
                 SecretKey secretKey = new SecretKey(key);
-//                    boolean[] tabs = secretKey.leftPartTable;
-//                    for(int i =0; i<tabs.length; i++){
-//                        System.out.println(tabs[i]);
-//                    }
-//                boolean[] xd = {true,false,true,false,true,false};
-//                Feistel feistel = new Feistel();
-//                feistel.calculateResult(feistel.S1,xd );
-               // plainText.changeTablesSide();
-                boolean[] tmp;
+
+                boolean[][]keyTabs = secretKey.getKeyTables();
+                boolean[] tmp ;
                 for(int i =15; i>=0;  i--){
-                    tmp=plainText.leftPartTable;
-
-                    Feistel feistel = new Feistel(plainText.leftPartTable,secretKey.getpc2permutatedTable());
-                    plainText.leftPartTable = feistel.calculate();
-                    for(int x =0; x<plainText.leftPartTable.length; x++){
-                        plainText.rightPartTable[x] = plainText.leftPartTable[x]^plainText.rightPartTable[x];
+                    tmp=plainText.rightPartTable;
+                    Feistel feistel = new Feistel(plainText.rightPartTable,keyTabs[i]);
+                    plainText.rightPartTable = feistel.calculate();
+                    for(int x =0; x<plainText.rightPartTable.length; x++){
+                        plainText.leftPartTable[x] = plainText.leftPartTable[x]^plainText.rightPartTable[x];
                     }
-                    plainText.leftPartTable=tmp;
+                    plainText.rightPartTable=tmp;
                     plainText.changeTablesSide();
-                    secretKey.shiftTabLeft(shiftCount[i]);
-
                 }
-               // plainText.changeTablesSide();
-                boolean[] result = plainText.endPerm(PlainText.permutation);
+                    plainText.changeTablesSide();
+                boolean[] result = plainText.endPerm(PlainText.endPermutation);
 
 
                 for(int BYTE = 0; BYTE < (result.length / 8); BYTE++){

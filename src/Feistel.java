@@ -45,18 +45,18 @@ public class Feistel {
     public boolean[] calculate(){
        boolean[] tab = xorTables();
        boolean[] end = new boolean[32];
-        System.out.println();
+
 
        for(int i =0; i <tab.length/6; i++ ){
-           int c = 0;
+
            boolean[] tabToSbox = new boolean[6];
            for(int j = i*6, x=0; j<i*6+6; j++,x++){
                tabToSbox[x]=tab[j];
-               c++;
+
 
 
            }
-           System.out.println(c++);
+
            tabToSbox = calculateResult(S.get(i),tabToSbox);
            for(int j = i*4, x=0; j<i*4+4; j++,x++){
               // System.out.println(j);
