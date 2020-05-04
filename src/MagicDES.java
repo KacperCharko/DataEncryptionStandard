@@ -9,21 +9,22 @@ public class MagicDES {
         boolean[] key= new boolean[64];
         FileInputStream keyFile = new FileInputStream("src/pliki/kod.bin");
         byte[] keyBytes = keyFile.readNBytes(8);
+        int i =0;
         for(byte B:keyBytes){
-            int i =0;
+
             boolean[] baj = intToBinaryArray(B,8);
             for (boolean x : baj) {
                 if (x) {
                     key[i++]=true;
                 }
                 else {
-                    key[i]=false;
+                    key[i++]=false;
                 }
             }
         }
         keyFile.close();
 
-        FileInputStream file = new FileInputStream("src/pliki/przed.bin");
+        FileInputStream file = new FileInputStream("src/pliki/tekst.bin");
         byte[] all = file.readAllBytes();
         file.close();
 
@@ -94,13 +95,13 @@ public class MagicDES {
 
 
         for(int BYTE = 0; BYTE < (result.length / 8); BYTE++){
-            byte value = 0;
-            for(int i = BYTE*8; i<(BYTE*8)+8; i++){
-                value <<= 1;
+            int value = 0;
+            for(int i = BYTE*8, x=7; i<(BYTE*8)+8; i++,x--){
                 if(result[i]){
-                    value |= 1;
+                    value += Math.pow(2,x);
                 }
             }
+
             outputBinary.write(value);
         }
 

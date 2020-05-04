@@ -13,15 +13,16 @@ public class MagicDesDeciper {
         boolean[] key= new boolean[64];
         FileInputStream keyFile = new FileInputStream("src/pliki/kod.bin");
         byte[] keyBytes = keyFile.readNBytes(8);
+        int i =0;
         for(byte B:keyBytes){
-            int i =0;
+
             boolean[] baj = intToBinaryArray(B,8);
             for (boolean x : baj) {
                 if (x) {
                     key[i++]=true;
                 }
                 else {
-                    key[i]=false;
+                    key[i++]=false;
                 }
             }
         }

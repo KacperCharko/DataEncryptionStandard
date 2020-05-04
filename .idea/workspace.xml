@@ -93,7 +93,9 @@
       <workItem from="1587675287575" duration="35000" />
       <workItem from="1587912960782" duration="2064000" />
       <workItem from="1587933062545" duration="4519000" />
-      <workItem from="1587998826662" duration="4371000" />
+      <workItem from="1587998826662" duration="14350000" />
+      <workItem from="1588413597190" duration="101000" />
+      <workItem from="1588591556467" duration="12451000" />
     </task>
     <servers />
   </component>
@@ -109,25 +111,33 @@
       <screen x="0" y="0" width="1280" height="720" />
     </state>
     <state x="0" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1280.720@0.0.1280.720" timestamp="1587512687093" />
-    <state width="1237" height="159" key="GridCell.Tab.0.bottom" timestamp="1588002649382">
+    <state width="1493" height="202" key="GridCell.Tab.0.bottom" timestamp="1588610585744">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1237" height="159" key="GridCell.Tab.0.bottom/0.0.1280.720@0.0.1280.720" timestamp="1588072032803" />
+    <state width="1493" height="202" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1588610585744" />
+    <state width="1493" height="202" key="GridCell.Tab.0.center" timestamp="1588610585743">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1237" height="159" key="GridCell.Tab.0.center/0.0.1280.720@0.0.1280.720" timestamp="1588072032803" />
+    <state width="1493" height="202" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1588610585743" />
+    <state width="1493" height="202" key="GridCell.Tab.0.left" timestamp="1588610585743">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1237" height="159" key="GridCell.Tab.0.left/0.0.1280.720@0.0.1280.720" timestamp="1588072032803" />
+    <state width="1493" height="202" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1588610585743" />
+    <state width="1493" height="202" key="GridCell.Tab.0.right" timestamp="1588610585744">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1237" height="159" key="GridCell.Tab.0.right/0.0.1280.720@0.0.1280.720" timestamp="1588072032803" />
+    <state width="1493" height="202" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1588610585744" />
+    <state x="337" y="185" key="com.intellij.ide.util.TipDialog" timestamp="1588413598962">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
-    <state width="1237" height="159" key="GridCell.Tab.0.bottom/0.0.1280.720@0.0.1280.720" timestamp="1588002649382" />
-    <state width="1237" height="159" key="GridCell.Tab.0.center" timestamp="1588002649382">
+    <state x="337" y="185" key="com.intellij.ide.util.TipDialog/0.0.1280.720@0.0.1280.720" timestamp="1588413598962" />
+    <state x="91" y="0" key="new project wizard" timestamp="1588413695044">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
-    <state width="1237" height="159" key="GridCell.Tab.0.center/0.0.1280.720@0.0.1280.720" timestamp="1588002649382" />
-    <state width="1237" height="159" key="GridCell.Tab.0.left" timestamp="1588002649382">
-      <screen x="0" y="0" width="1280" height="720" />
-    </state>
-    <state width="1237" height="159" key="GridCell.Tab.0.left/0.0.1280.720@0.0.1280.720" timestamp="1588002649382" />
-    <state width="1237" height="159" key="GridCell.Tab.0.right" timestamp="1588002649382">
-      <screen x="0" y="0" width="1280" height="720" />
-    </state>
-    <state width="1237" height="159" key="GridCell.Tab.0.right/0.0.1280.720@0.0.1280.720" timestamp="1588002649382" />
-    <state x="337" y="185" key="com.intellij.ide.util.TipDialog" timestamp="1587999014384">
-      <screen x="0" y="0" width="1280" height="720" />
-    </state>
-    <state x="337" y="185" key="com.intellij.ide.util.TipDialog/0.0.1280.720@0.0.1280.720" timestamp="1587999014384" />
+    <state x="91" y="0" key="new project wizard/0.0.1280.720@0.0.1280.720" timestamp="1588413695044" />
   </component>
 </project>
